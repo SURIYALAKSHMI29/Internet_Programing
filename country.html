@@ -1,0 +1,23 @@
+<!--Create clickable areas for three countries in the picture. When you click the country,
+features about the country have to be displayed in another web page.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Country</title>
+    </head>
+    <body>
+    <center>
+        <h1 style="color:purple">ASIA MAP</h1> <br>
+        <h2>To know more details, Click on...</h2>
+        <h3 style="color:navy"> India | Russia | China</h3>
+        <img src="country.jpg" alt="File cannot be opened" width="685" height="437" usemap="#map1">
+        <map name="map1">
+            <area shape="poly" coords="280,211,253,289,296,372,367,264,303,260" alt="India" href="india.html">
+            <area shape="poly" coords="301,140,258,195,359,255,468,289,481,208,512,161,428,111,445,155,374,182" alt="China" href="china.html">
+            <area shape="poly" coords="169,21,182,112,429,127,536,60,566,90,618,39" alt="Russia" href="russia.html">
+        </map>
+    </center>
+    </body>
+</html>
