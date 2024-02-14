@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form Using Table in HTML</title>
+<style>
+        h2 {
+            font-family: Sans-serif;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: bold;
+color: pink;
+            text-align: center;
+        }
+table{
+            font-family: verdana;
+color: white;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: bold;
+            background: lightgrey;
+            border-collapse: collapse;
+            border: 7px solid #000000;
+            border-style: double;
+        }
+table.inner {
+            border: 100px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="select"]{
+            width: 90%;
+            padding: 6px 12px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 25%;
+            background-color: grey;
+            padding: 14px 20px;
+            margin: 8px 0;
+border:none;
+            box-sizing: border-box;
+cursor:pointer;
+        }
+</style>
+</head>
+<body>
+<h2>Student information</h2>
+<center>
+<table cellpadding="10">
+<form action="/action_page.php">
+<tr> <td>First Name:</td>
+<td><input type="text" name="first_name"></td> </tr>
+<tr> <td>Last Name:</td>
+<td><input type="text" name="last_name"></td> </tr>
+<tr> <td>Email:</td>
+<td><input type="text" name="first_name"></td> </tr>
+<tr> <td>phone number:</td>
+<td><input type="text" name="first_name"></td> </tr>
+<form action="/action_page.php">
+<tr>
+<label for="gender">Gender:</label>
+<select id="gender" name="gender">
+<option value="female">female</option>
+<option value="male">male</option>
+<option value="other">other</option>
+</select>
+</tr>
+<tr> <td>phone number:</td>
+<td><input type="text" name="first_name"></td></tr>
+<tr> <td>phone number:</td>
+<td><input type="text" name="first_name"></td> </tr>
+<tr> <td>phone number:</td>
+<td><input type="text" name="first_name"></td> </tr>
+<tr> <td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="submit" value="next"> </td>
+</tr>
+</form> </table> </center>
+</body>
+</html>
