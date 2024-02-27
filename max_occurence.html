@@ -1,0 +1,33 @@
+<!--
+JavaScript program to find the character that occurs the most in a given string.
+-->
+
+<!DOCTYPE html>
+<html>
+<body><center>
+<h1>JavaScript Program</h1>
+<h5>To find the character which occurs the most in the given Text!</h5>
+<form>
+Enter a Text: <input type="text" id="txt"><br><br>
+<input type="button" value="Enter" onclick="func()">
+</form>
+<script>
+function func(){
+const str= document.getElementById("txt").value;
+const obj={};
+let count=0, char="";
+
+for(var i=0;i<str.length;i++) {
+   obj[str[i]] = obj[str[i]]+1 || 1;
+}
+for(let x in obj){
+   if(obj[x] >count){
+      count=obj[x];
+      char=x;
+   }
+}
+document.writeln("In '"+str+"', the character occured the most is: "+char+" for "+count+" times");
+}
+</script>
+</center></body>
+</html>
