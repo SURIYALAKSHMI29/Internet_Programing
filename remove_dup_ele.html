@@ -5,28 +5,35 @@ JavaScropt program to delete Duplicate elements from an array
 
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        p{ font-size: 1.2em;}
+    </style>
+</head>
 <body>
-<h2>JavaScript Program</h2>
-<p>Removing Duplicate elements from an array!</p>
+<center>
+<h1>JavaScript Program</h1>
+<h3>Removing Duplicate elements from an array!</h3>
 <p id="arr"></p>
 <p id="n_arr"></p>
+
 <script>
-let arr=["HTML", "JavaScript", "Jquery", "HTML", "css", "ip", "css", "JavaScript"]; 
-let dup_arr[]; 
+let arr=[" html", " JavaScript", " Jquery", " HTML", " css", " ip", " css", " JavaScript"]; 
+let dup_arr=[]; 
 let n_arr=[];
 function rem_dup(arr){
-    for(i=0;i<arr.length;i++){
-          let ele=arr[i].toLowerCase();   
-          if(dup_arr.indexOf(ele)===-1) //or if(!dup_arr.includes(ele)){}
-          {
-                 n_arr.push(arr[i]);
-                 dup_arr.push(ele);
-          } 
-    }
-    return n_arr;
+    for(i=0;i<arr.length;i++){
+          let ele=arr[i].toLowerCase();  
+          if(dup_arr.indexOf(ele)===-1){
+             n_arr.push(arr[i]);
+             dup_arr.push(ele);
+          }
+    }
+    return n_arr;
 }
-document.getElementById("arr").innerHTML = "The Given array is: " + arr; 
-document.getElementById("n_arr").innerHTML = "After removing duplicate Elements, "+ rem_dup(arr);
+document.getElementById("arr").innerHTML = "The Given array is:<br> " + arr;
+document.getElementById("n_arr").innerHTML = "After removing duplicate Elements,<br> "+ rem_dup(arr);
 </script>
+</center>
 </body>
 </html>
