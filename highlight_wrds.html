@@ -1,0 +1,49 @@
+<!--
+JavaScript program to highlight the words in a paragraph that have letters more than 8.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    .change{
+         background-color: yellow;
+    }
+    p{
+        font-size: 1.4em;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    h1{ color: rgb(51, 58, 80);}
+    h2{ color: navy; }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>JavaScript Programming</h1>
+    <h2>Highlight words that have more than 8 letters</h2><br>
+    <p id="para">This is a demo Paragraph. The words with more than 8 letters in this paragraph will get highlighted! 
+        Here we have some facts about JavaScript. JavaScript ise third most important language in Web Development, after HTML & CSS.
+        It is created by NetScape for the non-java programmers to utilize the new features supported in java.
+    </p>
+    <BR><h2>After Highlighting,</h2><p id="n_para"></p>
+    <script>
+        let para=document.getElementById("para").innerText;
+        let word = para.split(" ");
+        let out="";
+        for(let i=0;i<word.length;i++){
+            let x=word[i];
+            if(x.length>=8){
+                 str= "<span class='change'>"+ x +"</span>";
+            }
+            else{
+                 str=x;
+            }
+            out=out+ " "+str+" ";
+        }
+      
+        document.getElementById("n_para").innerHTML=out;
+    </script>
+    </center>
+</body>
+</html>
