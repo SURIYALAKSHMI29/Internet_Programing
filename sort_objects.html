@@ -1,0 +1,31 @@
+<!--
+JavaScript program to sort the student objects base on their total marks.
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<h2>JavaScript Programming</h2>
+<h5>To sort marks of Students</h5><br>
+</center>
+<script>
+const obj =[{"name":"AAA", "total":99}, {"name":"BBB", "total":87},
+{"name":"CCC", "total":89},
+{"name":"DDD", "total":94}];
+document.writeln("The Students' details:<br>");
+document.writeln("<br>Name    Total");
+for(let x of obj){
+   document.writeln("<br>"+ x.name+"          "+x.total);
+}
+document.writeln("<br><br>After sorting the details based on total,<br>");
+obj.sort(bytotal);
+function bytotal(a,b){
+    return b.total-a.total;}
+document.writeln("Name     Total");
+for(let x of obj){
+    document.writeln("<br>"+x.name+"          "+x.total);
+}
+</script>
+</body>
+</html>
