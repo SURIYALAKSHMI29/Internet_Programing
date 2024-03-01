@@ -5,24 +5,24 @@ JavaScript program to check whether the given String's 1st letter is in UpperCas
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Js_uppercase</title>
+   <title>Js_uppercase</title>
 </head>
 <body>
-
 <h1>JavaScript Program</h1>
-<h4>To find whether the first letter is in uppercase or not.</h4><br>
+<h4>To find whether the first letter is in uppercase or not.</h4>
 <script>
 let str= "Suriya";
 let str1= "laksh";
 function check(str){ 
 let substr= str.charAt(0).toUpperCase(); 
 if(str.charAt(0) == substr)  
-     return ("in UpperCase");
+    return ("in UpperCase");
 else
-     return ("not in uppercase");
+    return ("not in uppercase");
 }
-document.write("The text '"+str+"' - first letter is "+check(str)+"\n
-               The text '"+str1+"' - first letter is "+check(str1));
+document.write("The given words are 'Suriya' and 'laksh'<br><br>");
+document.write("The text '"+str+"' - first letter is "+check(str)+
+               "<br>The text '"+str1+"' - first letter is "+check(str1));
 </script>
 </body>
 </html>
