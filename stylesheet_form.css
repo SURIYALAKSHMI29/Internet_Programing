@@ -1,0 +1,33 @@
+body{
+    padding: 25px;
+}
+.title {
+  color: #5C6AC4;
+}
+.align{
+   position: absolute;
+   left: 385px;
+}
+.colon{
+    position: absolute;
+    left: 360px;
+}
+form{
+   background-color: #bebebe;
+   width: 650px;
+   padding: 20px;
+}
+fieldset{ 
+   padding-left: 150px;
+}
+.button{
+   height: 30px;
+   width: 80px;
+   margin-left: 50px;
+}
+#m{
+   margin-left: 50px;
+}
+#a_alert{
+   visibility: hidden;
+}
