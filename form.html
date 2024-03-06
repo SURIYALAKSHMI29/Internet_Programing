@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>form validation</title>
+    <link rel="stylesheet" href="stylesheet_form.css" />
+  </head>
+  <body>
+    <form onsubmit="event.preventDefault" >
+        <script src="script_form.js"></script>
+      <fieldset>
+        <legend>Form Validation</legend>
+        
+        <br><br>
+        Enter your Name  <label class="colon">:</label>
+        <input type="text" class="align" id="name" required><br><br>
+       
+        Enter your E-Mail <label class="colon">:</label>
+        <input type="email" class="align" id="email" required> <br><br>
+
+        Enter your Gender
+        <label class="colon">:</label>
+        <input type="radio" name="gender" id="m" value="Male">Male
+        <input type="radio" name="gender" id="f" value="Female">Female<br><br>
+
+        Create your Password
+        <label class="colon">:</label>
+        <input type="password" class="align" id="p1" required>
+         </label> <br><br>
+
+         Confirm your Password <label class="colon">:</label>
+        <input type="password" class="align" id="p2" required> <br><br>
+
+        Mobile Number <label class="colon">:</label>
+        <input type="text" class="align" id="tel" required> <br><br>
+
+        Choose you DOB<label class="colon">:</label>
+        <input type="date" id="dob" class="align" min='1900-01-01' max='2023-12-31' required/><Br><Br>
+
+        Enter your address <label class="colon">:</label>
+        <textarea class="align" id="address" cols="21" rows="3" required></textarea> 
+        <br><br> <br><br>
+      
+        <label>Choose your location </label><label class="colon">:</label>
+        <select class="align" id="location" placeholder="select" required>
+          <option value="" selected disabled hidden>select</option>
+          <option value="mdu">Madurai</option>
+          <option value="ch">Chennai</option>        
+          <option value="cbe">Coimbatore</option>
+          <option value="salem">Salem</option>          
+          <option value="tnv">Tirunelveli</option>          
+          <option value="mdu">Dindigul</option>
+        </select> <br><br><br>
+       
+        <input type="submit" value="Submit" class="button" onclick="check()"/>
+        <input type="reset" value="Clear" class="button"/>
+        <br><br>
+        
+      </fieldset>
+      </form>
+  </body>
+</html>
