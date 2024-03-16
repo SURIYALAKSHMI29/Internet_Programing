@@ -1,0 +1,42 @@
+/*
+ Write a jQuery function to check whether a string is an anagram or not.
+*/
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>anagram</title>
+        <script src="jquery-3.7.1.min.js"></script>
+    </head>
+    <body style="background-color: honeydew;">
+        <center>
+        <h1>Jquery Program</h1> <br>
+        <h2>To check, whether a given string is anagram or not</h2>       
+        Enter Word 1 : <input type="text" id="str1"><br><br>
+        Enter Word 2 : <input type="text" id="str2"><br><br>
+        <button style="height: 25px; width: 90px; font-size:medium; font-style: italic;">Check </button><br><br>
+        <label id="result" style="visibility: hidden"></label>
+        </center>
+         <script>
+            $("document").ready(function(){
+                $("button").click(function(){
+                    const str_1 = $("#str1").val();
+                    const str_2 = $("#str2").val();
+                    if(str_1=="" || str_2=="")
+                        alert("Kindly enter 2 words");
+                    else{
+                        const sstr_1=str_1.split("").sort().join("");
+                        const sstr_2=str_2.split('').sort().join('');
+                        $("#result").css("visibility","visible");
+                        if(sstr_1==sstr_2){
+                            $("#result").css("color","green");
+                            $("#result").text("Given words are Anagrams!");
+                        }
+                        else{
+                            $("#result").css("color","red");
+                            $("#result").text("Given words are not Anagrams!");
+                        }}
+                });
+            }); </script>
+    </body>
+</html>
