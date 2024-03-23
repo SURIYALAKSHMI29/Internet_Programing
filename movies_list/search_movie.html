@@ -1,0 +1,43 @@
+<!--
+Create a web application that displays a list of movies. Allow the user to search for movies by title or actor
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie_search_page</title>
+        <style>
+            body{
+                background-color: lightsteelblue;
+                padding: 60px;
+            }
+            .head{
+                font-size: 2.2em;
+                color: white;
+                text-shadow: 10px 10px 10px gray;
+                padding: 60px;
+            }
+            #s_bar{
+                font-style: italic;
+                width: 800px;
+                height:45px;
+                font-size: 1.0em;
+            }
+            .bt{
+                width: 80px;
+                height:30px;
+                font-size: 1.0em;
+            }
+        </style>
+    </head>
+    <body>
+    <center>
+        <div class="head">Search For your Favourite movies...</div>
+        <form action='http://localhost:8080/servlet_2/movie_search' method='post'>
+        <input type="text" name="input" onfocus="this.value=''" value="Search with movie (or) actor names. For example, search as 'dhanush' or 'moonu'" id='s_bar'>
+        <br><br><br>
+        <input type="submit" value='Search' class='bt'>
+        </form>
+    </center>
+    </body>
+</html>
