@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>language_preference</title>
+        <style>
+            body{
+                background-color: black;
+                color: white;
+            }
+            form{
+                height: 200px;
+                width: 400px;
+            }
+            #b{
+                height: 30px;
+                width: 80px;
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+    <center>
+        <br>
+        <h1>WELCOME, BROWSE WITH YOUR LANGUAGE</h1>
+        <br><br>
+        <form action="http://localhost:8080/servlet_s/greet" method="post">
+        <fieldset>
+            <br>
+            <strong>Your Name:</strong><input type="text" name="uname" required>
+            <h3>Select your preferred Language</h3>
+            <select name="select" required>
+                <option selected disabled hidden>Any language</option>
+                <option value ='french'>French</option>
+                <option value ='english'>English</option>
+                <option value ='spanish'>Spanish</option>
+                <option value ='russian'>Russian</option>
+                <option value ='tamil'>Tamil</option>
+            </select><br><br><br>
+            <button id='b'>Go</button><br><br>
+        </fieldset>
+        </form>
+    </center>
+    </body>
+</html>
