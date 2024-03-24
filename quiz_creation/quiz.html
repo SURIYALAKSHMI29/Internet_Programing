@@ -1,0 +1,54 @@
+<!--
+Create a web application that allows the user to create a quiz. The questions and
+answers should be stored in a session and displayed on the page.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <style>
+            div{
+                padding:50px;
+                font-family: TimesNewRoman;
+                font-size: 1.8em;
+                color: navy;
+            }
+            form{
+                width: 600px;
+            }
+            .q{
+                width:400px;
+                height:80px;
+                font-size: 1.4em;
+            }
+            
+            #ans{
+                color: green;
+            }
+            .bt{
+                font-style: italic;
+                margin-left: 25px;
+                margin-right: 25px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <center>
+        <div>Create your own Quiz....</div>
+        <form action="http://localhost:8080/servlet_2/quiz">
+            <fieldset>
+                <legend>Question 1</legend>
+                <h3>Here Question goes here...</h3>
+                <textArea name="q1" class="q"></textArea><br><br><br>
+                Option 1: <input type="text" class="op" name="opt1"><br><br>
+                Option 2: <input type="text" class="op" name="opt2"><br><br>
+                Option 3: <input type="text" class="op" name="opt3"><br><br><br>
+                Correct Answer: <input type="text" id="ans" name="ans"><br><br><br>
+                <input type="reset" value="Cancel" class="bt"/>
+                <input type="submit" value="Next" class="bt"/>
+            </fieldset>
+        </form>
+    </center>
+    </body>
+</html>
