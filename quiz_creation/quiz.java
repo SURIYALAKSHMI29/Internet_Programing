@@ -11,24 +11,35 @@ import javax.servlet.http.HttpSession;
  * @author Suriya
  */
 public class quiz extends HttpServlet {
-
+    String[] question = new String[3];
+    String[] op1 = new String[3];
+    String[] op2 = new String[3];
+    String[] op3 = new String[3];
+    String[] ans = new String[3];
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String question = request.getParameter("q1");
-            String op1 = request.getParameter("opt1");
-            String op2 = request.getParameter("opt2");
-            String op3 = request.getParameter("opt3");
-            String ans = request.getParameter("ans");
             
+            for(int i=0;i<3;i++){
+            question[i] = request.getParameter("q"+(i+1));
+            op1[i] = request.getParameter("opt1_"+(i+1));
+            op2[i] = request.getParameter("opt2_"+(i+1));
+            op3[i] = request.getParameter("opt3_"+(i+1));
+            ans[i] = request.getParameter("ans"+(i+1));
+            }       
             HttpSession session = request.getSession();
-            session.setAttribute("ques",question);
-            session.setAttribute("op1",op1);
-            session.setAttribute("op2",op2);
-            session.setAttribute("op3",op3);
-            session.setAttribute("ans",ans);
             
+            for(int i=0;i<3;i++){
+            session.setAttribute("ques"+i,question[i]);
+            session.setAttribute("op1"+i,op1[i]);
+            session.setAttribute("op2"+i,op2[i]);
+            session.setAttribute("op3"+i,op3[i]);
+            session.setAttribute("ans"+i,ans[i]);
+            }
+            
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -45,7 +56,7 @@ public class quiz extends HttpServlet {
             out.println("</html>");
         }
     }
-  
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
