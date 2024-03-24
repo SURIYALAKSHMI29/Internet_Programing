@@ -7,56 +7,52 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
  * @author Suriya
  */
 public class quiz_op extends HttpServlet {
-
+    String[] ques = new String[3];
+    String[] op1 = new String[3];
+    String[] op2 = new String[3];
+    String[] op3 = new String[3];
+    String[] ans = new String[3];
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession(false);
-            String ques = (String)session.getAttribute("ques");
-            String op1=(String)session.getAttribute("op1");
-            String op2=(String)session.getAttribute("op2");
-            String op3=(String)session.getAttribute("op3");
-            String ans= (String)session.getAttribute("ans");
+            
+            for(int i=0;i<3;i++){
+            ques[i] = (String)session.getAttribute("ques"+i);
+            op1[i]=(String)session.getAttribute("op1"+i);
+            op2[i]=(String)session.getAttribute("op2"+i);
+            op3[i]=(String)session.getAttribute("op3"+i);
+            ans[i]= (String)session.getAttribute("ans"+i);
+            }
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Play Quiz</title>");   
             out.println("<style>");
-            out.println("div{font-style:bold; font-size:30px;}");
+            out.println("div{font-style:bold; font-size:22px;}");
             out.println(".option{margin-left:50px;}");
+            out.println("#a{font-family:Algerian; font-size: 1.4em; margin-left:200px;");
             out.println("</style>");
-            out.println("</head>");
-            out.println("<body style='text-align:center'>");
-            out.println("<h1>"+ques+"</h1>");
-            out.println("<br><div><input type='radio' class='option' name='opt'>"+op1
-            +"<input type='radio' class='option' name='opt'>"+op2
-            +"<input type='radio' class='option' name='opt'>"+op3+
-            "<br><label id='answer' style='visibility:hidden'></label></div>");
-            out.println("<br><input type='submit' value='Submit'>");
-//            
-//            out.println("<script>"
-//                    + "function check(){"
-//                    +"document.getElementById('answer').style.visibility='visible';"
-//                    + "String op= document.getElementsByName('opt'); "
-//                    + "let f=0;"
-//                    + "for(option in op){ "
-//                        + "if(option.checked && option.value==ans){"
-//                            + "f=1;"                             
-//                            + "document.getElementById('answer').style.color=green;"
-//                            + "document.getElementById('answer').innerText='Right Answer';}"
-//                    + "}"
-//                    + "if(f==0){"
-//                        + "document.getElementById('answer').style.color=red;"
-//                        +"document.getElementById('answer').innerHTML='Wrong Answer, Right Answer is,';}"
-//                    + "}</script>");
             
+            out.println("</head>");
+            out.println("<body style='text-align:left left-margib:100px;'>");
+            out.println("<form action='http://localhost:8080/servlet_2/quiz_eval'>");
+            for(int i=0;i<3;i++){
+            out.println("<br><h2>"+(i+1)+") "+ques[i]+"</h2>");
+            out.println("<br><div><input type='radio' class='option' name='opt"+i+"' value='"+op1[i]+"'>"+op1[i]
+            +"<input type='radio' class='option' name='opt"+i+"' value='"+op2[i]+"'>"+op2[i]
+            +"<input type='radio' class='option' name='opt"+i+"' value='"+op2[i]+"'>"+op3[i]+"</div><br><br><hr>");
+            }
+            
+            out.println("<br><button id='a'>View Results</button>");
+            out.println("</form>");
+                     
             out.println("</body>");
             out.println("</html>");
         }
