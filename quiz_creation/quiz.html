@@ -2,6 +2,7 @@
 Create a web application that allows the user to create a quiz. The questions and
 answers should be stored in a session and displayed on the page.
 -->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,13 +17,13 @@ answers should be stored in a session and displayed on the page.
             form{
                 width: 600px;
             }
-            .q{
+            .ques{
                 width:400px;
-                height:80px;
+                height:50px;
                 font-size: 1.4em;
             }
             
-            #ans{
+            .ans{
                 color: green;
             }
             .bt{
@@ -40,14 +41,35 @@ answers should be stored in a session and displayed on the page.
             <fieldset>
                 <legend>Question 1</legend>
                 <h3>Here Question goes here...</h3>
-                <textArea name="q1" class="q"></textArea><br><br><br>
-                Option 1: <input type="text" class="op" name="opt1"><br><br>
-                Option 2: <input type="text" class="op" name="opt2"><br><br>
-                Option 3: <input type="text" class="op" name="opt3"><br><br><br>
-                Correct Answer: <input type="text" id="ans" name="ans"><br><br><br>
-                <input type="reset" value="Cancel" class="bt"/>
-                <input type="submit" value="Next" class="bt"/>
-            </fieldset>
+                <textArea name="q1" class="ques"></textArea><br><br><br>
+                Option 1: <input type="text" class="op" name="opt1_1"><br><br>
+                Option 2: <input type="text" class="op" name="opt2_1"><br><br>
+                Option 3: <input type="text" class="op" name="opt3_1"><br><br><br>
+                Correct Answer: <input type="text" class="ans" name="ans1"><br><br>
+            </fieldset><br>
+            
+            <fieldset>
+                <legend>Question 2</legend>
+                <h3>Here Question goes here...</h3>
+                <textArea name="q2" class="ques"></textArea><br><br><br>
+                Option 1: <input type="text" class="op" name="opt1_2"><br><br>
+                Option 2: <input type="text" class="op" name="opt2_2"><br><br>
+                Option 3: <input type="text" class="op" name="opt3_2"><br><br><br>
+                Correct Answer: <input type="text" class="ans" name="ans2"><br><br>     
+            </fieldset><br>
+            
+            <fieldset>
+                <legend>Question 3</legend>
+                <h3>Here Question goes here...</h3>
+                <textArea name="q3" class="ques"></textArea><br><br><br>
+                Option 1: <input type="text" class="op" name="opt1_3"><br><br>
+                Option 2: <input type="text" class="op" name="opt2_3"><br><br>
+                Option 3: <input type="text" class="op" name="opt3_3"><br><br><br>
+                Correct Answer: <input type="text" class="ans" name="ans3"><br><br>     
+            </fieldset><br>
+            
+            <input type="reset" value="Cancel" class="bt"/>
+            <input type="submit" value="Next" class="bt"/>
         </form>
     </center>
     </body>
