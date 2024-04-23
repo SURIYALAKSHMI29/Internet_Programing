@@ -28,6 +28,12 @@ message to the user indicating whether the insertion was successful or not.
         .bt {
             margin-left: 100px;
         }
+        .error {
+            color: red;
+        }
+        p{
+            margin-left:40%;
+        }
     </style>
 </head>
 <body>
@@ -72,7 +78,14 @@ message to the user indicating whether the insertion was successful or not.
             else{
                 $sql="INSERT INTO appoinments(name,email,date,time) VALUES('$name','$email','$date','$time')";
                 $con->query($sql);
-                echo '<center><h3>Appointment booked successfully</h3></center>';
+                echo '<center><h3>Appointment booked successfully</h3>';
+                echo '<h4>Appointment Details</h4></center>';
+                echo '<strong>
+                    <p>Name: '.$name.' </p>
+                    <p>Email: '.$email.'</p>
+                    <p>Date: '.$date.'</p>
+                    <p>Time: '.$time.'</p>
+                </strong>';
             }
             $con->close();
         }
