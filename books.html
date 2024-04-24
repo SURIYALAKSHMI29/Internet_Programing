@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+Create an XML document containing the details of 5 books and save it on the
+server. Write an Ajax program that displays all the books in a dropdown list on the webpage.
+When the user selects a book from the dropdown list, the program should display the book's
+details below the dropdown list without refreshing the page
+-->
+<html>
+    <head>
+        <title>book_details</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: lavender;
+            }
+            #details{
+                padding: 20px;
+                padding-bottom: 20px;
+                position:relative;
+                margin-top: 50px;
+                height:auto;
+                width:25%;
+            }
+            #name, #author, #edition, #year{
+                position: absolute;
+                left: 33%;
+                font-size: 18px;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    <center>
+        <h2>Book Details</h2>
+        <strong>Select any book:
+            <select id="bk"  onchange="func(this.value);">
+                <option disabled selected>Book name</option>
+                <option value="Hotel Del Luna">Hotel Del Luna</option>
+                <option value="Silent widow">Silent widow</option>
+                <option value="Harry Potter">Harry Potter</option>
+                <option value="Nothing losts forever">Nothing losts forever</option>
+                <option value="Agni Siragugal">Agni Siragugal</option>
+            </select>
+        </strong> <br>
+        <div id="details">
+            <div id="name" class="d"></div><br><br>
+            <div id="author" class="d"></div><br><br>
+            <div id="edition" class="d"></div><br><br>
+            <div id="year" class="d"></div>
+        </div>
+        <script>
+        function func(t1)
+        {
+            let obj=new XMLHttpRequest();
+            let name,author,edi,year;
+    
+            obj.onreadystatechange = function()
+            {
+
+                if(obj.readyState===4 && obj.status===200)
+                {
+                    let data = obj.responseXML;
+                    let book = data.getElementsByTagName("b");
+                   
+                    for(i=0;i<book.length;i++)
+                    {
+                        if(t1.match(book[i].getElementsByTagName("name")[0].childNodes[0].nodeValue))
+                        {
+                            name = book[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;"<br>"
+                            author = book[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;"<br>"
+                            edi = book[i].getElementsByTagName("edition")[0].childNodes[0].nodeValue;"<br>"
+                            year = book[i].getElementsByTagName("year")[0].childNodes[0].nodeValue;"<br>"
+                        }
+                    }
+                    document.getElementById("name").innerHTML ="Name:"+name;
+                    document.getElementById("author").innerHTML ="Author:"+author;
+                    document.getElementById("edition").innerHTML ="Edition:"+edi;
+                    document.getElementById("year").innerHTML ="Published Year:"+year;
+                }      
+            };
+            obj.open("GET","books.xml",true);
+            obj.send();
+        }
+        </script>
+    </center>
+    </body>
+</html>
