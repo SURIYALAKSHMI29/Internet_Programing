@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+
+<books>
+    <b>
+        <name>Hotel Del Luna</name>
+        <author>IU</author>
+        <year>2018</year>
+        <price>199</price>
+        <available>25</available>
+    </b>
+
+     <b>
+        <name>Agni Siragugal</name>
+        <author>Abdul Kalam</author>
+        <year>1999</year>
+        <price>210</price>
+        <available>0</available>
+    </b>
+   
+    <b>
+        <name>Silent widow</name>
+        <author>Sidney Sheldon</author>
+        <year>1990</year>
+        <price>250</price>
+        <available>80</available>
+    </b>
+   
+    <b>
+        <name>Harry Potter</name>
+        <author>J.K.Rowling</author>
+        <year>1998</year>
+        <price>782</price>
+        <available>100</available>
+    </b>
+   
+    <b>
+        <name>Nothing losts forever</name>
+        <author>Sidney Sheldon</author>
+        <year>2002</year>
+        <price>399</price>
+        <available>0</available>
+    </b>
+   
+</books>
