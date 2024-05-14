@@ -1,0 +1,52 @@
+<!--
+Create a web page with an image and a button, and add the following functionality:
+When the button is clicked, fade out the image over 2 seconds.
+After the image has faded out, change the source of the image to a new image.
+Fade in the new image over 2 seconds.
+-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Image - Fade</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <style>
+            img{
+                height: 65%;
+                width:80%;
+            }
+            button{
+                height: 35px;
+                width: 100px;
+                margin: 20px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            h2{
+                margin: 30px;
+                color: darkorange;
+            }
+        </style>
+    </head>
+    <body><center>
+        <h2>To change the image, click the button below!</h2>
+        <img src="pokemon.jpg" alt="data not found" id="img"><br>
+        <button>Click me</button>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                   $("#img").fadeOut("2000",function(){
+                       $(this).attr("src","celebi.jpg");
+                       $(this).fadeIn("2000");
+                       $("button").hide();
+                       $("h3").hide();
+                       
+                    }); 
+                });
+            });
+        </script>
+    </center></body>
+</html>
