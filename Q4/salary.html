@@ -1,0 +1,53 @@
+<!--
+Write a Html form to enter the salary details of an employee (Name,Empid,Designation,Basic pay, DA is 10% of basic pay, 
+HRA is 3% of basic pay). Write a servlet to calculate the net salary of an employee. Display the entire details of the employee.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee_salary</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            form{
+                position: relative;
+            }
+
+            input{
+                margin: 10px;
+            }
+            .form-container{
+                position: absolute;
+                left: 40%;
+                text-align: left;
+            }
+            input[type='submit']{
+                margin-left: 110px;
+                height: 27px;
+                width: 80px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            h2{
+                margin-left: 30px;
+                color: palevioletred;
+            }
+        </style>
+    </head>
+    
+    <body>
+    <center>
+        <h2>Employee Salary Calculation</h2><br>
+        <form action="http://localhost:8080/model_lab/salary" method="post">
+            <fieldset class="form-container">
+            Employee Name: <input type="text" name="name"><br>
+            Employee ID:<input type="text" name="id"><br>
+            Designation:<input type="text" name="desg"><br>
+            Basic pay:<input type="number" step="0.01" min="0" name="pay"><br>
+            <input type="submit" value="Calculate">
+            </fieldset>
+        </form>
+    </center>
+    </body>
+</html>
