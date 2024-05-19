@@ -26,9 +26,9 @@ The repository is structured into directories, each containing exercises related
 
 ## Here are a few examples of what you'll find in this repository:
 
-HTML & CSS: Creating responsive web pages with semantic HTML and advanced CSS techniques.
-PHP: Handling form submissions, interacting with databases, and creating dynamic web pages.
-AJAX: Implementing asynchronous data fetching to enhance user experience.
-XML & XSLT: Transforming XML documents into different formats using XSLT.
-JavaScript & jQuery: Adding interactivity to web pages with JavaScript and jQuery.
+*HTML & CSS:* Creating responsive web pages with semantic HTML and advanced CSS techniques.
+*PHP:* Handling form submissions, interacting with databases, and creating dynamic web pages.
+*AJAX:* Implementing asynchronous data fetching to enhance user experience.
+*XML & XSLT:* Transforming XML documents into different formats using XSLT.
+*JavaScript & jQuery:* Adding interactivity to web pages with JavaScript and jQuery.
 
